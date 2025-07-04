@@ -9,7 +9,7 @@ public class Main {
 
         Product cheese = new Explorable("Cheese", 100, 10, tomorrow, 0.2);
         Product biscuits = new Explorable("Biscuits", 150, 5, tomorrow, 0.7);
-        Product tv = new ShippableProduct("TV", 5000, 3, 10.0);
+        Product tv = new ShippableInterfaceProduct("TV", 5000, 3, 10.0);
         Product scratchCard = new DigitalProduct("Scratch Card", 20, 50);
 
         Customer customer = new Customer("Ali", 10000);

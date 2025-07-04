@@ -1,7 +1,7 @@
-class ShippableProduct extends Product implements Shippable {
+class ShippableInterfaceProduct extends Product implements ShippableInterface {
     double weight;
 
-    ShippableProduct(String name, double price, int quantity, double weight) {
+    ShippableInterfaceProduct(String name, double price, int quantity, double weight) {
         super(name, price, quantity);
         this.weight = weight;
     }

@@ -1,6 +1,6 @@
 import java.util.Date;
 
-class Explorable extends Product implements Shippable {
+class Explorable extends Product implements ShippableInterface {
     Date expiryDate;
     double weight;
 

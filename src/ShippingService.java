@@ -3,13 +3,13 @@ import java.util.List;
 import java.util.Map;
 
 class ShippingService {
-    static void ship(List<Shippable> items) {
+    static void ship(List<ShippableInterface> items) {
         System.out.println("Shipment");
         Map<String, Integer> counts = new HashMap<>();
         Map<String, Double> weights = new HashMap<>();
         double totalWeight = 0;
 
-        for (Shippable item : items) {
+        for (ShippableInterface item : items) {
             String name = item.getName();
             counts.put(name, counts.getOrDefault(name, 0) + 1);
             weights.put(name, item.getWeight());

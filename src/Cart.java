@@ -19,16 +19,16 @@ class Cart {
         return subtotal;
     }
 
-    List<Shippable> getShippableItems() {
-        List<Shippable> shippables = new ArrayList<>();
+    List<ShippableInterface> getShippableItems() {
+        List<ShippableInterface> shippableInterfaces = new ArrayList<>();
         for (CartItem item : items) {
             if (item.product.requiresShipping()) {
                 for (int i = 0; i < item.quantity; i++) {
-                    shippables.add((Shippable) item.product);
+                    shippableInterfaces.add((ShippableInterface) item.product);
                 }
             }
         }
-        return shippables;
+        return shippableInterfaces;
     }
 
     boolean hasExpiredItems() {
@@ -54,7 +54,7 @@ class Cart {
 
         for (CartItem item : items) item.product.quantity -= item.quantity;
 
-        List<Shippable> shippingItems = getShippableItems();
+        List<ShippableInterface> shippingItems = getShippableItems();
         if (!shippingItems.isEmpty()) ShippingService.ship(shippingItems);
 
         customer.deduct(total);
