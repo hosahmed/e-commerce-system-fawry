@@ -7,8 +7,8 @@ public class Main {
         calendar.add(Calendar.DATE, 1);
         Date tomorrow = calendar.getTime();
 
-        Product cheese = new Explorable("Cheese", 100, 10, tomorrow, 0.2);
-        Product biscuits = new Explorable("Biscuits", 150, 5, tomorrow, 0.7);
+        Product cheese = new Expirable("Cheese", 100, 10, tomorrow, 0.2);
+        Product biscuits = new Expirable("Biscuits", 150, 5, tomorrow, 0.7);
         Product tv = new ShippableProduct("TV", 5000, 3, 10.0);
         Product scratchCard = new DigitalProduct("Scratch Card", 20, 50);
 

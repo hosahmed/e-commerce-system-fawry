@@ -1,10 +1,10 @@
 import java.util.Date;
 
-class Explorable extends Product implements ShippableInterface {
+class Expirable extends Product implements ShippableInterface {
     Date expiryDate;
     double weight;
 
-    Explorable(String name, double price, int quantity, Date expiryDate, double weight) {
+    Expirable(String name, double price, int quantity, Date expiryDate, double weight) {
         super(name, price, quantity);
         this.expiryDate = expiryDate;
         this.weight = weight;
