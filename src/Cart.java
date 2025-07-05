@@ -9,6 +9,21 @@ class Cart {
         items.add(new CartItem(product, quantity));
     }
 
+    void remove(Product product, int quantity) {
+        for (CartItem item : items) {
+            if (item.product == product) {
+                if (quantity >= item.quantity) {
+                    items.remove(item);
+                } else {
+                    item.quantity -= quantity;
+                }
+                return;
+            }
+        }
+        System.out.println(product.name + " not found in cart.");
+    }
+
+
     boolean isEmpty() {
         return items.isEmpty();
     }
