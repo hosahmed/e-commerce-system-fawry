@@ -36,15 +36,9 @@ class Cart {
         return false;
     }
 
-    boolean hasOutOfStockItems() {
-        for (CartItem item : items) if (item.quantity > item.product.quantity) return true;
-        return false;
-    }
-
     void checkout(Customer customer) {
         if (isEmpty()) throw new RuntimeException("Empty cart");
         if (hasExpiredItems()) throw new RuntimeException("Expired item");
-        if (hasOutOfStockItems()) throw new RuntimeException("Out of stock");
 
         double subtotal = getSubtotal();
         double shippingFee = getShippableItems().isEmpty() ? 0 : 30;
